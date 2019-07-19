@@ -1,7 +1,8 @@
 {
-  "name": "react-config-tutorial",
-  "version": "1.0.0",
-  "description": "",
+  "name": "react-config-boilerplate",
+  "version": "1.0.1",
+  "description": "Boilerplate code to start with React.",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "start-dev": "webpack-dev-server --open --config webpack.dev.js",
@@ -15,19 +16,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-hot-loader": "^4.12.8",
+    "lodash": "^4.17.15",
     "moment": "^2.24.0",
-    "lodash": "^4.17.14"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "autoprefixer": "^9.6.1",
+    "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
+    "babel-plugin-lodash": "^3.3.4",
+    "babel-preset-env": "^1.7.0",
     "css-loader": "^3.1.0",
     "eslint": "^6.0.1",
     "eslint-config-prettier": "^6.0.0",
@@ -46,6 +49,7 @@
     "node-sass": "^4.12.0",
     "postcss-loader": "^3.0.0",
     "prettier": "^1.18.2",
+    "react-hot-loader": "^4.12.8",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "stylus": "^0.54.5",

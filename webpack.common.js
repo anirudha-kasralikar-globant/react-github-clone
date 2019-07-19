@@ -8,14 +8,15 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist/'),
     publicPath: '/',
-    filename: 'bundle.js',
-    // filename: '[name].[hash].js',
+    // filename: 'bundle.js',
+    filename: '[name].[hash].js',
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/, use: ['babel-loader', 'eslint-loader'],
+        exclude: /node_modules/,
+        use: ['babel-loader', 'eslint-loader'],
       },
       {
         test: /\.css$/,
@@ -45,6 +46,7 @@ module.exports = {
   },
   resolve: {
     extensions: [
+      '*',
       '.js',
       '.jsx',
     ],
@@ -71,7 +73,8 @@ module.exports = {
       ],
     }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/),
-    new LodashModuleReplacementPlugin,
+    new LodashModuleReplacementPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
   ],
   optimization: {
     runtimeChunk: 'single',

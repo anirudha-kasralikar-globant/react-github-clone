@@ -1,13 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './style/main.less';
-
-class Welcome extends React.Component {
-  render() {
-    return <h1 className={'header'}>Hello World from React boilerplate</h1>;
-  }
-  // This is comment
-}
+import Welcome from './Welcome';
 
 if (process.env.NODE_ENV !== 'production') {
   console.log('Looks like we are in development mode!');
@@ -15,3 +8,5 @@ if (process.env.NODE_ENV !== 'production') {
 
 let mountNode = document.getElementById('root');
 ReactDOM.render(<Welcome />, mountNode);
+
+module.hot.accept();
