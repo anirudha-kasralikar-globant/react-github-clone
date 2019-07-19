@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d24f4f48-ea0b-455c-a75e-c01af15e470e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sandbox.config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Welcome.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/0.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/0.bundle.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/2.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/2.bundle.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/bundle.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/vendors.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.common.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.dev.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.dev.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,8 +35,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+            <state relative-caret-position="271">
+              <caret line="98" selection-start-line="98" selection-end-line="98" />
             </state>
           </provider>
         </entry>
@@ -212,12 +196,12 @@
       <workItem from="1563450432817" duration="19612000" />
       <workItem from="1563503699337" duration="95000" />
       <workItem from="1563503814249" duration="90000" />
-      <workItem from="1563503927806" duration="6583000" />
+      <workItem from="1563503927806" duration="6663000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27004000" />
+    <option name="totallyTimeSpent" value="27084000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="693" extended-state="6" />
@@ -471,8 +455,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+        <state relative-caret-position="271">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
         </state>
       </provider>
     </entry>
