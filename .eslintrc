@@ -2,8 +2,9 @@
   "parser": "babel-eslint",
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "plugin:react/recommended",
+    "prettier",
+    "plugin:prettier/recommended",
     "prettier/react",
     "prettier/standard"
   ],
@@ -14,6 +15,7 @@
   },
   "plugins": [
     "react",
+    "prettier",
     "react-hooks"
   ],
   "globals": {
@@ -29,6 +31,7 @@
     "ecmaVersion": 2018,
     "sourceType": "module",
     "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
       "jsx": true
     }
   },
@@ -36,6 +39,22 @@
     "linebreak-style": [
       "error",
       "unix"
+    ],
+    "quotes": [
+      "warn",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "args": "none",
+        "ignoreRestSiblings": false
+      }
     ],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",

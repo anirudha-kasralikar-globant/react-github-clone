@@ -1,7 +1,9 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+
+const WebpackMd5Hash = require('webpack-md5-hash');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -35,12 +37,28 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'stylus-loader'],
       },
       {
-        test: /\.svg$/,
-        use: 'file-loader',
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          'file-loader',
+        ],
       },
       {
-        test: /\.png$/,
-        use: [{ loader: 'url-loader', options: { mimetype: 'image/png' } }],
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: [
+          'file-loader',
+        ],
+      },
+      {
+        test: /\.(csv|tsv)$/,
+        use: [
+          'csv-loader',
+        ],
+      },
+      {
+        test: /\.xml$/,
+        use: [
+          'xml-loader',
+        ],
       },
     ],
   },
@@ -52,6 +70,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
       template: require('html-webpack-template'),
       inject: false,
@@ -73,8 +92,9 @@ module.exports = {
       ],
     }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/),
-    new LodashModuleReplacementPlugin(),
     new webpack.HotModuleReplacementPlugin(),
+    new WebpackMd5Hash(),
+    new CleanWebpackPlugin(),
   ],
   optimization: {
     runtimeChunk: 'single',
