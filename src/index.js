@@ -2,7 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'fomantic-ui-css/semantic.css';
+import './../semantic/dist/semantic.css';
 
 declare var module: any;
 
