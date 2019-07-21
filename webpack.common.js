@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const CopyPlugin = require('copy-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -89,12 +89,31 @@ module.exports = {
           name: 'viewport',
           content: 'width=device-width, initial-scale=1, shrink-to-fit=no',
         },
+        {
+          name: 'theme-color',
+          content: '#000000',
+        }
+      ],
+      links: [
+        {
+          href: '/favicon.ico',
+          rel: 'shortcut icon',
+        },
+        {
+          href: '/manifest.json',
+          rel: 'manifest',
+        },
       ],
     }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/),
     new webpack.HotModuleReplacementPlugin(),
     new WebpackMd5Hash(),
     new CleanWebpackPlugin(),
+    new CopyPlugin([
+      { from: './public/.htaccess' },
+      { from: './public/favicon.ico' },
+      { from: './public/manifest.json' },
+    ]),
   ],
   optimization: {
     runtimeChunk: 'single',

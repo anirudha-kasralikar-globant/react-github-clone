@@ -16,7 +16,8 @@
   "plugins": [
     "react",
     "prettier",
-    "react-hooks"
+    "react-hooks",
+    "flowtype"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -58,6 +59,8 @@
     ],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "flowtype/define-flow-type": 1,
+    "flowtype/use-flow-type": 1
   }
 }
