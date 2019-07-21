@@ -11,9 +11,11 @@ if (process.env.NODE_ENV !== 'production') {
   console.log('Looks like we are in development mode!');
 }
 
+console.log('MY_ENV:' + process.env.MY_ENV);
+
 import App from './components/App/index';
 
-let mountNode = document.getElementById('root');
+let mountNode = document.getElementById('app');
 
 if (mountNode !== null) {
   ReactDOM.render(<App />, mountNode);

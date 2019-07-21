@@ -1,5 +1,5 @@
 // @flow
-
+'use strict';
 import React from 'react';
 // import { Button, Loader } from 'semantic-ui-react';
 

@@ -7,12 +7,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
-  output: {
-    path: path.resolve(__dirname, 'dist/'),
-    publicPath: '/',
-    // filename: 'bundle.js',
-    filename: '[name].[hash].js',
-  },
   module: {
     rules: [
       {
@@ -74,7 +68,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: require('html-webpack-template'),
       inject: false,
-      appMountId: 'root',
+      appMountId: 'app',
       appMountHtmlSnippet: '<noscript>You need to enable JavaScript to run this app.</noscript>',
       title: 'React Configuration Setup',
       hash: true,
