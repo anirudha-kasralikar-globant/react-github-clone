@@ -2,13 +2,8 @@
 'use strict';
 import React, { Component } from 'react';
 import { Menu } from 'semantic-ui-react';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
-import LandingPage from '../Landing';
-import SignInPage from '../SignIn';
-import HomePage from '../Home';
-import AccountPage from '../Account';
-import AdminPage from '../Admin';
 
 type Props = {
   activeItem: string,
@@ -89,11 +84,6 @@ class Navigation extends Component<Props, State> {
             Admin
           </Menu.Item>
         </Menu>
-        <Route exact path={ROUTES.LANDING} component={LandingPage} />
-        <Route path={ROUTES.SIGN_IN} component={SignInPage} />
-        <Route path={ROUTES.HOME} component={HomePage} />
-        <Route path={ROUTES.ACCOUNT} component={AccountPage} />
-        <Route path={ROUTES.ADMIN} component={AdminPage} />
       </div>
     );
   }

@@ -3,6 +3,7 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
     "prettier",
     "plugin:prettier/recommended",
     "prettier/react",
@@ -17,7 +18,8 @@
     "react",
     "prettier",
     "react-hooks",
-    "flowtype"
+    "flowtype",
+    "jsx-a11y"
   ],
   "globals": {
     "Atomics": "readonly",
