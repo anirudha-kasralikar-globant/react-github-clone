@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -16,7 +17,11 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', { loader: 'css-loader', options: { importLoaders: 1 } }, 'postcss-loader'],
+        use: [
+          'style-loader',
+          { loader: 'css-loader', options: { importLoaders: 1 } },
+          'postcss-loader',
+        ],
       },
       {
         test: /\.scss$/,
@@ -32,36 +37,24 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: [
-          'file-loader',
-        ],
+        use: ['file-loader'],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: [
-          'file-loader',
-        ],
+        use: ['file-loader'],
       },
       {
         test: /\.(csv|tsv)$/,
-        use: [
-          'csv-loader',
-        ],
+        use: ['csv-loader'],
       },
       {
         test: /\.xml$/,
-        use: [
-          'xml-loader',
-        ],
+        use: ['xml-loader'],
       },
     ],
   },
   resolve: {
-    extensions: [
-      '*',
-      '.js',
-      '.jsx',
-    ],
+    extensions: ['*', '.js', '.jsx'],
   },
   plugins: [
     new webpack.ProgressPlugin(),
@@ -69,8 +62,9 @@ module.exports = {
       template: require('html-webpack-template'),
       inject: false,
       appMountId: 'app',
-      appMountHtmlSnippet: '<noscript>You need to enable JavaScript to run this app.</noscript>',
-      title: 'React Configuration Setup',
+      appMountHtmlSnippet:
+        '<noscript>You need to enable JavaScript to run this app.</noscript>',
+      title: 'GitHub Clone',
       hash: true,
       showErrors: true,
       cache: false,
@@ -86,7 +80,7 @@ module.exports = {
         {
           name: 'theme-color',
           content: '#000000',
-        }
+        },
       ],
       links: [
         {
@@ -108,6 +102,10 @@ module.exports = {
       { from: './public/favicon.ico' },
       { from: './public/manifest.json' },
     ]),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+    }),
   ],
   optimization: {
     runtimeChunk: 'single',
@@ -120,5 +118,13 @@ module.exports = {
         },
       },
     },
+    minimizer: [
+      new UglifyJsPlugin({
+        test: /\.js(\?.*)?$/i,
+        cache: true,
+        parallel: true,
+        sourceMap: true,
+      }),
+    ],
   },
 };
