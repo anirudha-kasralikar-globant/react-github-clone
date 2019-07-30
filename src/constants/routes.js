@@ -1,4 +1,6 @@
 // @flow
-'use strict';
 
-export const LANDING = '/';
+const LANDING: string = '/';
+const CALCULATOR: string = '/calculator';
+
+export { LANDING, CALCULATOR };

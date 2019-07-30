@@ -1,5 +1,5 @@
 // @flow
-'use strict';
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
@@ -26,33 +26,38 @@ function tryConvert(temperature, convert) {
   return rounded.toString();
 }
 
-function BoilingVerdict(props) {
-  if (props.celsius >= 100) {
+function BoilingVerdict({ celsius }) {
+  if (celsius >= 100) {
     return <p>The water would boil.</p>;
   }
   return <p>The water would not boil.</p>;
 }
 
 BoilingVerdict.propTypes = {
-  celsius: PropTypes.number,
+  celsius: PropTypes.number.isRequired,
 };
 
 class TemperatureInput extends Component<*> {
   constructor(props) {
     super(props);
-    (this: any).this.handleChange = this.handleChange.bind(this);
+    (this: any).handleChange = this.handleChange.bind(this);
   }
 
   handleChange(e) {
-    this.props.onTemperatureChange(e.target.value);
+    const { props } = this;
+    props.onTemperatureChange(e.target.value);
   }
 
   render() {
-    const temperature = this.props.temperature;
-    const scale = this.props.scale;
+    const { temperature } = this.props;
+    const { scale } = this.props;
     return (
       <fieldset>
-        <legend>Enter temperature in {scaleNames[scale]}:</legend>
+        <legend>
+          {'Enter temperature in'}
+          {scaleNames[scale]}
+          {':'}
+        </legend>
         <input value={temperature} onChange={this.handleChange} />
       </fieldset>
     );
@@ -60,9 +65,9 @@ class TemperatureInput extends Component<*> {
 }
 
 TemperatureInput.propTypes = {
-  scale: PropTypes.string,
-  temperature: PropTypes.string,
-  onTemperatureChange: PropTypes.func,
+  scale: PropTypes.string.isRequired,
+  temperature: PropTypes.string.isRequired,
+  onTemperatureChange: PropTypes.func.isRequired,
 };
 
 class Calculator extends Component<*> {
@@ -74,20 +79,27 @@ class Calculator extends Component<*> {
   }
 
   handleCelsiusChange(temperature) {
-    this.setState({ scale: 'c', temperature: temperature });
+    this.setState({ scale: 'c', temperature });
   }
 
   handleFahrenheitChange(temperature) {
-    this.setState({ scale: 'f', temperature: temperature });
+    this.setState({ scale: 'f', temperature });
   }
 
   render() {
-    const scale = this.state.scale;
-    const temperature = this.state.temperature;
-    const celsius =
-      scale === 'f' ? tryConvert(temperature, toCelsius) : temperature;
-    const fahrenheit =
-      scale === 'c' ? tryConvert(temperature, toFahrenheit) : temperature;
+    const { scale } = this.state;
+    const { temperature } = this.state;
+
+    let celsius = temperature;
+    if (scale === 'f') {
+      celsius = tryConvert(temperature, toCelsius);
+    }
+
+    let fahrenheit = temperature;
+
+    if (scale === 'c') {
+      fahrenheit = tryConvert(temperature, toFahrenheit);
+    }
 
     return (
       <div>
