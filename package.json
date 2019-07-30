@@ -18,7 +18,7 @@
     "flow-check": "./node_modules/.bin/flow check",
     "test": "jest --coverage --passWithNoTests",
     "fomantic-build": "cd semantic && npx gulp build",
-    "githook": "npm run eslint-check && npm run flow && npm run test"
+    "githook": "npm run eslint-check && npm run test"
   },
   "keywords": [],
   "author": "",
