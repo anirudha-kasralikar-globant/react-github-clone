@@ -2,20 +2,23 @@
   "parser": "babel-eslint",
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended",
     //    "plugin:jsx-a11y/recommended",
     "prettier",
-    "plugin:prettier/recommended",
-    "prettier/react",
     "prettier/standard",
-    "airbnb"
+    "plugin:prettier/recommended",
+    "airbnb",
+    "plugin:flowtype/recommended",
+    "plugin:compat/recommended",
+    "plugin:react/recommended",
+    "prettier/react"
   ],
   "env": {
     "browser": true,
     "node": true,
-    "es6": true
+    "es6": true,
+    "jest": true
   },
-  "plugins": ["react", "prettier", "react-hooks", "flowtype", "jsx-a11y"],
+  "plugins": ["compat", "react", "prettier", "react-hooks", "flowtype", "jsx-a11y"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -23,7 +26,8 @@
   "settings": {
     "react": {
       "version": "detect"
-    }
+    },
+    "polyfills": ["fetch", "Number.isNaN"]
   },
   "parserOptions": {
     "ecmaVersion": 2018,
@@ -37,7 +41,7 @@
     "linebreak-style": ["error", "unix"],
     "quotes": ["warn", "single"],
     "semi": ["error", "always"],
-//    "semi": [2, "never"],
+    //    "semi": [2, "never"],
     "no-unexpected-multiline": 2,
     "no-unused-vars": [
       "warn",
@@ -53,6 +57,7 @@
     "flowtype/define-flow-type": 1,
     "flowtype/use-flow-type": 1,
     "max-len": [1, 100, 2, { "ignoreComments": true }],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "compat/compat": 2
   }
 }

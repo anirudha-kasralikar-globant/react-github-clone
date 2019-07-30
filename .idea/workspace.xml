@@ -9,12 +9,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/Calculator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/Calculator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/roles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/roles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -145,7 +139,7 @@
       <workItem from="1564113572193" duration="120000" />
       <workItem from="1564113718143" duration="7888000" />
       <workItem from="1564386165716" duration="53000" />
-      <workItem from="1564386237721" duration="14383000" />
+      <workItem from="1564386237721" duration="18766000" />
     </task>
     <servers />
   </component>
