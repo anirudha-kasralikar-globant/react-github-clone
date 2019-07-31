@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import GithubSvgLogo from '../../../assets/images/svgexport-0.svg';
+import GithubSvgLogo from '../../../assets/images/logoHeader.svg';
 
 function Logo() {
   return (

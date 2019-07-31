@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import LogoFooter from '../../assets/images/logoFooter.svg';
+import LogoFooter from '../../../assets/images/logoFooter.svg';
 
 const footerLinksLeft = [
   {

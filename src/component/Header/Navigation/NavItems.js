@@ -1,10 +1,8 @@
 // @flow
 
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import * as ROUTES from '../../../constants/routes';
-import Explore from '../../../container/Explore';
-import MyIssues from '../../../container/MyIssues';
 
 function NavItems() {
   return (
@@ -19,7 +17,6 @@ function NavItems() {
       >
         Issues
       </Link>
-      <Route path={ROUTES.ISSUES} component={MyIssues} />
       <Link
         className="js-selected-navigation-item Header-link  mr-3"
         data-ga-click="Header, click, Nav menu - item:explore"
@@ -28,7 +25,6 @@ function NavItems() {
       >
         Explore
       </Link>
-      <Route path={ROUTES.EXPLORE} component={Explore} />
     </nav>
   );
 }
