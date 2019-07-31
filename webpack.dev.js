@@ -12,6 +12,9 @@ module.exports = merge(common, {
     contentBase: './dist',
     historyApiFallback: true,
     hot: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
   },
   output: {
     path: path.resolve(__dirname, 'dist/'),

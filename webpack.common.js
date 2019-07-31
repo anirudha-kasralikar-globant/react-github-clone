@@ -94,7 +94,6 @@ module.exports = {
       ],
     }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/),
-    new webpack.HotModuleReplacementPlugin(),
     new WebpackMd5Hash(),
     new CleanWebpackPlugin(),
     new CopyPlugin([
@@ -106,6 +105,10 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery',
     }),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
   ],
   optimization: {
     runtimeChunk: 'single',
