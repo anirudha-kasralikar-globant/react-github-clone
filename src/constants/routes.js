@@ -1,6 +1,7 @@
 // @flow
 
-const LANDING: string = '/';
-const CALCULATOR: string = '/calculator';
-
-export { LANDING, CALCULATOR };
+export const LANDING: string = '/';
+export const CALCULATOR: string = '/calculator';
+export const EXPLORE: string = '/explore';
+export const TRENDING: string = '/trending';
+export const ISSUES: string = '/issues';

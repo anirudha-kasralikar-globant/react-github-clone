@@ -1,34 +1,24 @@
 // @flow
 
-import React, { Component } from 'react';
+import React from 'react';
 import { Container } from 'semantic-ui-react';
-import { Link, Route, BrowserRouter as Router } from 'react-router-dom';
-import Calculator from './Calculator';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Header from '../Header';
+import Footer from '../Footer';
 
-class App extends Component<*> {
-  static foo() {
-    // Implement
-  }
-
-  onclick = () => {
-    // Implement
-  };
-
-  render() {
-    return (
-      <Container fluid>
-        <Router>
-          <header className="Header" role="banner">
-            <div className="Header-item">Logo</div>
-            <button type="button" onClick={this.onclick}>
-              <Link to="/calculator">Calculator</Link>
-            </button>
-          </header>
-          <Route path="/calculator" component={Calculator} />
-        </Router>
-      </Container>
-    );
-  }
+function App() {
+  return (
+    <Container fluid>
+      <Router>
+        <div className="position-relative js-header-wrapper">
+          <Header />
+        </div>
+        <div id="start-of-content" className="show-on-focus" />
+        <div id="js-flash-container" />
+        <Footer />
+      </Router>
+    </Container>
+  );
 }
 
 export default App;
