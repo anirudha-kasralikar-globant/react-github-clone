@@ -5,21 +5,26 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "start-dev": "webpack-dev-server --progress --colors --open --config webpack.dev.js",
-    "build-dev": "webpack --config webpack.dev.js",
+    "start-dev": "webpack-dev-server --progress --colors --open --config config/webpack.dev.js",
+    "build-dev": "webpack --config config/webpack.dev.js",
     "build-dev:analyze": "npm run build-dev -- --env.addon=bundleanalyze --env.addon=bundlevisualizer",
-    "start-prod": "webpack-dev-server --open --config webpack.prod.js",
-    "build-prod": "webpack --config webpack.prod.js -p",
+    "start-prod": "webpack-dev-server --open --config config/webpack.prod.js",
+    "build-prod": "webpack --config config/webpack.prod.js -p",
     "build-prod:analyze": "npm run build-prod -- --env.addon=bundleanalyze --env.addon=bundlevisualizer",
     "format": "./node_modules/.bin/prettier --single-quote --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "lint": "./node_modules/.bin/eslint src ",
     "eslint-check": "./node_modules/.bin/eslint \"src/**/*.js\"",
     "eslint-fix": "./node_modules/.bin/eslint --fix \"src/**/*.js\"",
     "eslint-config-check": "./node_modules/.bin/eslint --print-config ./eslint-print-config.js | ./node_modules/.bin/eslint-config-prettier-check",
-    "flow": "./node_modules/.bin/flow",
+    "flow-start": "./node_modules/.bin/flow",
+    "flow-stop": "./node_modules/.bin/flow stop",
     "flow-check": "./node_modules/.bin/flow check",
     "test": "jest --coverage --passWithNoTests",
+    "update-test": "npm run test -- -u",
+    "jest": "npm run update-test && npm run test",
     "fomantic-build": "cd semantic && npx gulp build",
-    "githook": "npm run eslint-check && npm run test"
+    "githook": "npm run eslint-check && npm run test",
+    "create-component": "./node_modules/.bin/yo mnml-component"
   },
   "keywords": [],
   "author": "",
@@ -31,7 +36,7 @@
   "browserslist": [
     "last 2 versions",
     "> 1%",
-    "IE 10"
+    "IE 11"
   ],
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
@@ -95,15 +100,18 @@
     "clean-webpack-plugin": "^3.0.0",
     "coffeescript": "^2.4.1",
     "copy-webpack-plugin": "^5.0.4",
-    "css-loader": "^3.1.0",
+    "css-loader": "^3.2.0",
     "dotenv-webpack": "^1.7.0",
     "empty": "^0.10.1",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-flowtype-essential": "^1.0.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-config-react": "^1.1.7",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-import-resolver-webpack": "^0.11.1",
     "eslint-loader": "^2.2.1",
     "eslint-plugin-compat": "^3.3.0",
     "eslint-plugin-flowtype": "^3.13.0",
@@ -116,6 +124,7 @@
     "file-loader": "^4.1.0",
     "flow-bin": "^0.103.0",
     "flow-upgrade": "^1.1.0",
+    "generator-mnml-component": "0.0.6",
     "html-webpack-plugin": "^3.2.0",
     "html-webpack-template": "^6.2.0",
     "husky": "^3.0.2",
@@ -129,6 +138,7 @@
     "prettier": "^1.18.2",
     "react-hot-loader": "^4.12.10",
     "react-svg-loader": "^3.0.3",
+    "react-test-renderer": "^16.8.6",
     "react-thunk": "^1.0.0",
     "redux-saga": "^1.0.5",
     "sass-loader": "^7.1.0",
@@ -144,7 +154,8 @@
     "webpack-dev-server": "^3.7.2",
     "webpack-md5-hash": "0.0.6",
     "webpack-merge": "^4.2.1",
-    "webpack-visualizer-plugin": "^0.1.11"
+    "webpack-visualizer-plugin": "^0.1.11",
+    "yo": "^3.1.0"
   },
   "husky": {
     "hooks": {

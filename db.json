@@ -8,7 +8,18 @@
       "serverMessage": "Hello from the server!"
     }
   ],
-  "posts": [],
+  "posts": [
+    {
+      "title": "dfsdfds",
+      "body": "dsf",
+      "id": 2
+    },
+    {
+      "title": "cxcxcxcZ",
+      "body": "xcxcc",
+      "id": 4
+    }
+  ],
   "repos": [
     {
       "id": 1,
