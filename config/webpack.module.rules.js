@@ -1,4 +1,6 @@
 // @flow
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const paths = require('./paths');
 
 module.exports = {
   module: {
@@ -12,6 +14,13 @@ module.exports = {
         test: /\.css$/,
         use: [
           'style-loader',
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: paths.appPublic,
+              hmr: process.env.NODE_ENV === 'development',
+            },
+          },
           {
             loader: 'css-loader',
             options: {
@@ -27,6 +36,13 @@ module.exports = {
         use: [
           'style-loader',
           {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: paths.appPublic,
+              hmr: process.env.NODE_ENV === 'development',
+            },
+          },
+          {
             loader: 'css-loader',
             options: {
               importLoaders: 1,
@@ -41,6 +57,13 @@ module.exports = {
         use: [
           'style-loader',
           {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: paths.appPublic,
+              hmr: process.env.NODE_ENV === 'development',
+            },
+          },
+          {
             loader: 'css-loader',
             options: {
               importLoaders: 1,
@@ -52,7 +75,24 @@ module.exports = {
       },
       {
         test: /\.styl$/,
-        use: ['style-loader', 'css-loader', 'stylus-loader'],
+        use: [
+          'style-loader',
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: paths.appPublic,
+              hmr: process.env.NODE_ENV === 'development',
+            },
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              // modules: true,
+            },
+          },
+          'stylus-loader',
+        ],
       },
       {
         test: /\.svg$/,

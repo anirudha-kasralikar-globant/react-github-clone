@@ -8,6 +8,9 @@ class PostsPresenter extends Component {
     const { onComponentLoad } = this.props;
     // eslint-disable-next-line flowtype/no-unused-expressions
     onComponentLoad();
+
+    this.posts = React.createRef();
+    console.log(this.posts);
   }
 
   render() {

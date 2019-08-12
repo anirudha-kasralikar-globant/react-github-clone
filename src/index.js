@@ -8,8 +8,6 @@ import store from './app/state/store';
 import './index.less';
 import App from './app/views/App';
 
-declare var module: any;
-
 const mountNode = document.getElementById('app');
 if (mountNode !== null) {
   if (process.env.NODE_ENV !== 'production') {
