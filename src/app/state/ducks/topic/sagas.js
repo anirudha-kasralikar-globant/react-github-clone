@@ -30,9 +30,8 @@ export function* workerFetchTopics(action) {
 //
 export function* workerDeleteTopic(action) {
   yield put({ type: types.DELETE_TOPIC_BEGIN });
-  const {response, error} = yield deleteTopic();
+  const { response, error } = yield deleteTopic();
   // dispatch(deleteTopicBegin());
-
 }
 
 export default function* sagas() {
