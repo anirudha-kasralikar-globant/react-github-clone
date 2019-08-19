@@ -30,7 +30,7 @@ function NavItems() {
         data-selected-links="/hello /hello /hello"
         to={ROUTES.HELLO}
       >
-        Hello
+        Hello (Thunk)
       </Link>
       <Link
         className="js-selected-navigation-item Header-link  mr-3"
@@ -38,7 +38,15 @@ function NavItems() {
         data-selected-links="/posts /posts /posts"
         to={ROUTES.POSTS}
       >
-        Posts
+        Posts (Thunk)
+      </Link>
+      <Link
+        className="js-selected-navigation-item Header-link  mr-3"
+        data-ga-click="Header, click, Nav menu - item:explore"
+        data-selected-links="/topics /topics /topics"
+        to={ROUTES.TOPICS}
+      >
+        Topics (Saga)
       </Link>
     </nav>
   );

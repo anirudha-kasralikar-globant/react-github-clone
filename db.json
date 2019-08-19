@@ -10,19 +10,26 @@
   ],
   "posts": [
     {
-      "title": "dfsdfds",
-      "body": "dsf",
-      "id": 2
-    },
-    {
-      "title": "cxcxcxcZ",
-      "body": "xcxcc",
-      "id": 4
-    },
-    {
       "title": "sdsds",
       "body": "ddsdsds",
       "id": 5
+    },
+    {
+      "title": "fadsfdasfads",
+      "body": "asdsadassa",
+      "id": 6
+    }
+  ],
+  "topics": [
+    {
+      "title": "sdsds",
+      "body": "ddsdsds",
+      "id": 1
+    },
+    {
+      "title": "fadsfdasfads",
+      "body": "asdsadassa",
+      "id": 2
     }
   ],
   "repos": [

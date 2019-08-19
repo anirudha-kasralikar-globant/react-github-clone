@@ -3,81 +3,81 @@ import { createReducer } from '../../utils';
 import * as types from './types';
 
 const initialState = {
-  posts: [],
+  topics: [],
   loading: false,
   error: false,
   title: '',
   body: '',
 };
 
-const postReducer = createReducer(initialState)({
-  [types.BEGIN_POST_TITLE_CHANGE]: (state, action) => {
+const topicReducer = createReducer(initialState)({
+  [types.BEGIN_TOPIC_TITLE_CHANGE]: (state, action) => {
     return {
       ...state,
       title: action.payload.title,
     };
   },
-  [types.BEGIN_POST_BODY_CHANGE]: (state, action) => {
+  [types.BEGIN_TOPIC_BODY_CHANGE]: (state, action) => {
     return {
       ...state,
       body: action.payload.body,
     };
   },
-  [types.FETCH_POSTS_BEGIN]: (state, action) => {
+  [types.FETCH_TOPICS_BEGIN]: (state, action) => {
     return {
       ...state,
       loading: true,
       error: null,
     };
   },
-  [types.FETCH_POSTS_SUCCESS]: (state, action) => {
+  [types.FETCH_TOPICS_SUCCESS]: (state, action) => {
     return {
       ...state,
       loading: false,
-      posts: action.payload.posts,
+      topics: action.payload.topics,
     };
   },
-  [types.FETCH_POSTS_FAILURE]: (state, action) => {
+  [types.FETCH_TOPICS_FAILURE]: (state, action) => {
     return {
       ...state,
       loading: false,
       error: action.payload.error,
-      posts: [],
+      topics: [],
     };
   },
-  [types.CREATE_POST_BEGIN]: (state, action) => {
+  [types.CREATE_TOPIC_BEGIN]: (state, action) => {
     return {
       ...state,
       loading: true,
       error: null,
     };
   },
-  [types.CREATE_POST_SUCCESS]: (state, action) => {
-    state.posts.push(action.payload.data);
+  [types.CREATE_TOPIC_SUCCESS]: (state, action) => {
+    state.topics.push(action.payload.data);
     return {
       ...state,
       loading: false,
     };
   },
-  [types.CREATE_POST_FAILURE]: (state, action) => {
+  [types.CREATE_TOPIC_FAILURE]: (state, action) => {
     return {
       ...state,
       loading: false,
       error: action.payload.error,
     };
   },
-  [types.DELETE_POST_SUCCESS]: (state, action) => {
-    const filtered = state.posts.filter(post => {
-      return post.id !== action.payload.id;
+  [types.DELETE_TOPIC_SUCCESS]: (state, action) => {
+    const filtered = state.topics.filter(topic => {
+      return topic.id !== action.payload.id;
     });
 
     return {
       ...state,
       loading: false,
       error: false,
-      posts: filtered,
+      topics: filtered,
     };
   },
 });
 
-export default postReducer;
+export default topicReducer;

@@ -4,12 +4,14 @@ import Explore from '../views/Explore';
 import Hello from '../views/Hello';
 import Landing from '../views/Landing';
 import ManagePosts from '../views/ManagePosts';
+import ManageTopics from '../views/ManageTopics';
 
 export const LANDING = '/';
 export const EXPLORE = '/explore';
 export const ISSUES = '/issues';
 export const HELLO = '/hello';
 export const POSTS = '/posts';
+export const TOPICS = '/topics';
 
 export const routes = [
   {
@@ -35,6 +37,11 @@ export const routes = [
   {
     path: POSTS,
     component: ManagePosts,
+    exact: true,
+  },
+  {
+    path: TOPICS,
+    component: ManageTopics,
     exact: true,
   },
 ];
